@@ -90,13 +90,13 @@ export default class UI {
 			this.blueMap.hiresTileManager.setViewDistance(this.blueMap.hiresViewDistance);
 			this.blueMap.hiresTileManager.update();
 		});
-		let lowresSlider = new Slider(480, 6400, 1, this.blueMap.lowresViewDistance, v => {
+		let lowresSlider = new Slider(480, 12800, 1, this.blueMap.lowresViewDistance, v => {
 			this.blueMap.lowresViewDistance = v.getValue();
 			this.blueMap.lowresTileManager.setViewDistance(this.blueMap.lowresViewDistance);
 			this.blueMap.lowresTileManager.update();
 		});
 		let extendedZoom = new ToggleButton("extended zoom", this.blueMap.controls.settings.zoom.max > 2000, button => {
-			this.blueMap.controls.settings.zoom.max = button.isSelected() ? 8000 : 2000;
+			this.blueMap.controls.settings.zoom.max = button.isSelected() ? 10000 : 2000;
 			this.blueMap.controls.targetDistance = Math.min(this.blueMap.controls.targetDistance, this.blueMap.controls.settings.zoom.max);
 		});
 		let debugInfo = new ToggleButton("debug-info", this.blueMap.debugInfo, button => {
